@@ -11,37 +11,20 @@
 Requierements:
 -------------
 
-![](https://img.shields.io/badge/Ubuntu->%3D%2021.10-brightgreen) ![](https://img.shields.io/badge/MySQL->%3D%208.0-brightgreen) ![](https://img.shields.io/badge/Grafana->%3D%208.3.6-brightgreen) ![](https://img.shields.io/badge/PHP->%3D%208.0.8-brightgreen) 
+![](https://img.shields.io/badge/MySQL->%3D%208.0-brightgreen) ![](https://img.shields.io/badge/Grafana->%3D%208.3.6-brightgreen) ![](https://img.shields.io/badge/PHP->%3D%208.0.8-brightgreen)
 
 Installation:
 -------------
 
 **I can't believe that you don't have fail2ban installed on your server. If you don't have it, please go to (https://doc.ubuntu-fr.org/fail2ban)**
 
-Required:
-- [Python2 >= 2.6 or Python >= 3.2](https://www.python.org) or [PyPy](https://pypy.org)
-- python-setuptools, python-distutils or python3-setuptools for installation from source
-
-Optional:
-- [pyinotify >= 0.8.3](https://github.com/seb-m/pyinotify), may require:
-  * Linux >= 2.6.13
-- [gamin >= 0.0.21](http://www.gnome.org/~veillard/gamin)
-- [systemd >= 204](http://www.freedesktop.org/wiki/Software/systemd) and python bindings:
-  * [python-systemd package](https://www.freedesktop.org/software/systemd/python-systemd/index.html)
-- [dnspython](http://www.dnspython.org/)
-
-**To install:**
 
 **Shell part:**
 
     sudo git clone https://github.com/LiinxTV/fail2ban-monitoring.git
     cd fail2ban-monitoring
-    mv fail2ban-monitoring.sh /usr/bin/fail2ban-monitoring.sh
-
-Warning, before installing, make sure to have the alias in your `~/.bashrc`:
-
-    echo "alias f2bm='sh /usr/bin/fail2ban-monitoring.sh'" >> ~/.bashrc
-    source ~/.bashrc
+    mv fail2ban-monitoring.sh /usr/bin/f2bm
+    chmod +x /usr/bin/f2bm
 
 You need to add this to your `/etc/mysql/conf.d/mysql.cnf`
 
@@ -93,4 +76,5 @@ Configuration:
     port    = ssh
     logpath = %(sshd_log)s
     backend = %(sshd_backend)s
-    action = grafana
+    action  = your_main_action
+              grafana

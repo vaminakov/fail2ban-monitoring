@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#███████╗ █████╗ ██╗██╗     ██████╗ ██████╗  █████╗ ███╗   ██╗    ███╗   ███╗ ██████╗ ███╗   ██╗██╗████████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗ 
-#██╔════╝██╔══██╗██║██║     ╚════██╗██╔══██╗██╔══██╗████╗  ██║    ████╗ ████║██╔═══██╗████╗  ██║██║╚══██╔══╝██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝ 
+#███████╗ █████╗ ██╗██╗     ██████╗ ██████╗  █████╗ ███╗   ██╗    ███╗   ███╗ ██████╗ ███╗   ██╗██╗████████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗
+#██╔════╝██╔══██╗██║██║     ╚════██╗██╔══██╗██╔══██╗████╗  ██║    ████╗ ████║██╔═══██╗████╗  ██║██║╚══██╔══╝██╔═══██╗██╔══██╗██║████╗  ██║██╔════╝
 #█████╗  ███████║██║██║      █████╔╝██████╔╝███████║██╔██╗ ██║    ██╔████╔██║██║   ██║██╔██╗ ██║██║   ██║   ██║   ██║██████╔╝██║██╔██╗ ██║██║  ███╗
 #██╔══╝  ██╔══██║██║██║     ██╔═══╝ ██╔══██╗██╔══██║██║╚██╗██║    ██║╚██╔╝██║██║   ██║██║╚██╗██║██║   ██║   ██║   ██║██╔══██╗██║██║╚██╗██║██║   ██║
 #██║     ██║  ██║██║███████╗███████╗██████╔╝██║  ██║██║ ╚████║    ██║ ╚═╝ ██║╚██████╔╝██║ ╚████║██║   ██║   ╚██████╔╝██║  ██║██║██║ ╚████║╚██████╔╝
-#╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+#╚═╝     ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝
 
 #SQL Lazy Query
 request() {
@@ -16,44 +16,44 @@ request() {
 }
 
 #Terminal Color Codes
-RESET='\033[0m'
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHTGRAY='\033[0;37m'
-DARKGRAY='\033[1;30m'
-LIGHTRED='\033[1;31m'
-LIGHTGREEN='\033[1;32m'
-YELLOW='\033[1;33m'
-LIGHTBLUE='\033[1;34m'
-LIGHTPURPLE='\033[1;35m'
-LIGHTCYAN='\033[1;36m'
-WHITE='\033[1;37m'
+RESET="\033[0m"
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+ORANGE="\033[0;33m"
+BLUE="\033[0;34m"
+PURPLE="\033[0;35m"
+CYAN="\033[0;36m"
+LIGHTGRAY="\033[0;37m"
+DARKGRAY="\033[1;30m"
+LIGHTRED="\033[1;31m"
+LIGHTGREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+LIGHTBLUE="\033[1;34m"
+LIGHTPURPLE="\033[1;35m"
+LIGHTCYAN="\033[1;36m"
+WHITE="\033[1;37m"
 
 #Help message
 help() {
-    echo "${RESET}Usage: f2bm [options] <value>"
-    echo "${RESET}"
-    echo "${RESET}"
-    echo "${RESET}List of commands:"
-    echo "${RESET}    ${YELLOW}install                                  ${RED}-${RESET} Install components."
-    echo "${RESET}    ${YELLOW}uninstall                                ${RED}-${RESET} Uninstall components."
-    echo "${RESET}    ${YELLOW}reset                                    ${RED}-${RESET} Unban all and reset iptables rules."
-    echo "${RESET}    ${YELLOW}configure mysql <user|password|database> ${RED}-${RESET} Change database connection settings."
-    echo "${RESET}    ${YELLOW}import                                   ${RED}-${RESET} Import local fail2ban banned ip's to database."
-    echo "${RESET}    ${YELLOW}file <file>                              ${RED}-${RESET} Ban with file."
-    echo "${RESET}    ${YELLOW}ban <ip>                                 ${RED}-${RESET} Ban user ip adress."
-    echo "${RESET}    ${YELLOW}unban <ip>                               ${RED}-${RESET} Unban user ip adress."
-    echo "${RESET}    ${YELLOW}debug                                    ${RED}-${RESET} Show any bad configuration probem."
-    echo "${RESET}"
+    echo -e "${RESET}Usage: f2bm [options] <value>"
+    echo -e "${RESET}"
+    echo -e "${RESET}"
+    echo -e "${RESET}List of commands:"
+    echo -e "${RESET}    ${YELLOW}install                                  ${RED}-${RESET} Install components."
+    echo -e "${RESET}    ${YELLOW}uninstall                                ${RED}-${RESET} Uninstall components."
+    echo -e "${RESET}    ${YELLOW}reset                                    ${RED}-${RESET} Unban all and reset iptables rules."
+    echo -e "${RESET}    ${YELLOW}db-conf <user|password|database>         ${RED}-${RESET} Change database connection settings."
+    echo -e "${RESET}    ${YELLOW}import                                   ${RED}-${RESET} Import local fail2ban banned ip's to database."
+    echo -e "${RESET}    ${YELLOW}file <file>                              ${RED}-${RESET} Ban with file."
+    echo -e "${RESET}    ${YELLOW}ban <ip>                                 ${RED}-${RESET} Ban user ip adress."
+    echo -e "${RESET}    ${YELLOW}unban <ip>                               ${RED}-${RESET} Unban user ip adress."
+    echo -e "${RESET}    ${YELLOW}debug                                    ${RED}-${RESET} Show any bad configuration probem."
+    echo -e "${RESET}"
 }
 
 #Logger
 log() {
-    echo "${RESET}[${1}${RESET}] ${2}" "${RESET}"
+    echo -e "${RESET}[${1}${RESET}] ${2}" "${RESET}"
 }
 
 directory_exist() { if [ -d "$1" ]; then return 0 ; else return 1; fi } #Checking if a directory exist.
@@ -69,6 +69,28 @@ present_in_fail2ban() {
 present_in_db() {
     data=$(request "SELECT ip FROM data;")
     if echo "$data" | grep -q "${1}"; then return 0; else return 1; fi
+}
+
+#Check dependencies
+dependencies=("mariadb" "xmlstarlet" "sqlite3" "jq")
+check_dependencies() {
+    local missing=()
+    for cmd in "${dependencies[@]}"; do
+        if ! command -v "$cmd" &> /dev/null; then
+            missing+=("$cmd")
+        fi
+    done
+
+    if [ ${#missing[@]} -ne 0 ]; then
+        "${RED}ERROR" "There are no dependencies:"
+        for cmd in "${missing[@]}"; do
+            echo "  - $cmd"
+        done
+        return 1
+    else
+        log "${LIGHTGREEN}OK" "All dependencies are installed!"
+        return 0
+    fi
 }
 
 #Define MySQL credentials and store them in a config file (/etc/fail2ban-monitoring/config.xml)
@@ -103,33 +125,9 @@ install() {
         log "${RED}ERROR" "Failed to continue installation, config file is already present !"
         exit
     fi
-    #Update packages and upgrade them before performing the installation.
-    apt -qq update && apt upgrade -y >/dev/null 2>&1
-    #Cancel installation if mysql if not found [hard depend]
-    if [ "$(dpkg-query -W -f='${Status}' mysql-server 2>/dev/null | grep -c "ok installed")" -eq 0 ]; then
-        log "${RED}DEPEND" "MySQL not found, please install it !"
-        exit
-    fi
-    #Install xmlstarlet package if not found [soft depend]
-    if [ "$(dpkg-query -W -f='${Status}' xmlstarlet 2>/dev/null | grep -c "ok installed")" -eq 0 ]; then
-        log "${RED}ERROR" "xmlstarlet not installed, Installing... !"
-        apt -qq install xmlstarlet -y >/dev/null 2>&1
-    else
-        log "${LIGHTGREEN}OK" "xmlstarlet package is already installed"
-    fi
-    #Install sqlite3 package if not found [soft depend]
-    if [ "$(dpkg-query -W -f='${Status}' sqlite3 2>/dev/null | grep -c "ok installed")" -eq 0 ]; then
-        log "${RED}ERROR" "sqlite3 not installed, Installing... !"
-        apt -qq install sqlite3 -y >/dev/null 2>&1
-    else
-        log "${LIGHTGREEN}OK" "sqlite3 package is already installed"
-    fi
-    #Install jq package if not found [soft depend]
-    if [ "$(dpkg-query -W -f='${Status}' jq 2>/dev/null | grep -c "ok installed")" -eq 0 ]; then
-        log "${RED}ERROR" "jq not installed, Installing... !"
-        apt -qq install jq -y >/dev/null 2>&1
-    else
-        log "${LIGHTGREEN}OK" "sqlite3 package is already installed"
+    if ! check_dependencies; then
+        log "${RED}ERROR" "Please install dependencies and try again."
+        exit 1
     fi
     #Create folder /etc/fail2ban-monitoring if not exist
     if ! directory_exist "/etc/fail2ban-monitoring"; then
@@ -150,11 +148,11 @@ install() {
     #Writing file that bind ban and unban events to f2bm script
     {
         echo "[Definition]"
-        "actionban = sh /usr/bin/fail2ban-monitoring.sh ban <ip>"
-        "actionunban = sh /usr/bin/fail2ban-monitoring.sh unban <ip>"
+        "actionban = sh /usr/bin/f2bm ban <ip>"
+        "actionunban = sh /usr/bin/f2bm unban <ip>"
         "[Init]"
-        "name = default"
-    } >> /etc/fail2ban/action.d/grafana.conf
+        #"name = default"
+    } > /etc/fail2ban/action.d/grafana.conf
     #Setup database schema
     database=$(grep -oP '(?<=<database>).*?(?=</database>)' "/etc/fail2ban-monitoring/config.xml")
     request "SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"
@@ -252,9 +250,8 @@ ban() {
         endpoint=$(curl -s "http://ip-api.com/json/${1}")
 
         if present_in_db "$1" && present_in_fail2ban "$1"; then
-            log "${RED}ERROR" "This address is already banned !"
+            log "${RED}ERROR" "This address is already in DB !"
         else
-            if ! present_in_db "$1"; then
                 invalid="'"
                 replace=" "
                 country=$(echo "${endpoint}" | jq -r ".country")
@@ -264,13 +261,7 @@ ban() {
                 lng=$(echo "${endpoint}" | jq -r ".lon")
                 isp=$(echo "${endpoint}" | jq -r ".isp")
                 request "INSERT INTO data(ip,country,city,zip,lat,lng,isp,time) VALUES ('${1}','$(echo "${country}" | sed s/\'//g)','$(echo "${city}" | sed s/\'//g)','${zip}',${lat},${lng},'${isp}', '$(date +'%Y-%m-%d')')"
-            fi
-
-            if ! present_in_fail2ban "$1"; then
-                fail2ban-client set ssh banip "${1}" > /dev/null
-            fi
-
-            log "${LIGHTGREEN}OK" "The address${RED} ${1} ${RESET}has been banned !"
+                log "${LIGHTGREEN}OK" "The address${RED} ${1} ${RESET}has been added to DB !"
         fi
     else
         log "${RED}ERROR" "The address${RED} ${1} ${RESET}is not a valid ip address !"
@@ -285,19 +276,12 @@ unban() {
         data=$(request "SELECT ip FROM data;")
 
         if ! present_in_db "$1" && ! present_in_fail2ban "$1"; then
-            log "${RED}ERROR" "This address is not banned !"
+            log "${RED}ERROR" "This address is not in DB !"
             exit
-        fi
-
-        if present_in_db "$1"; then
-            request "DELETE FROM data WHERE ip='${1}';"
-        fi
-
-        if present_in_fail2ban "$1"; then
-            fail2ban-client unban "${1}" > /dev/null
-        fi
-
-        log "${LIGHTGREEN}OK" "The address${RED} ${1} ${RESET}has been unbanned !"
+        else
+                 request "DELETE FROM data WHERE ip='${1}';"
+                 log "${LIGHTGREEN}OK" "The address${RED} ${1} ${RESET}has been deleted from DB !"
+         fi
     else
         log "${RED}ERROR" "The address${RED} ${1} ${RESET}is not a valid ip address !"
         exit
@@ -343,89 +327,20 @@ update_db_database() {
     log "${LIGHTGREEN}OK" "The new MySQL user will be:${LIGHTPURPLE} $database ${RESET}"
 }
 
-if [ "$#" -eq 0 ] ; then
-    log "${RED}ERROR" "Invalid syntax, please use: ${LIGHTPURPLE}f2bm --help${RESET}"
-    exit
-fi
-
-if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-    help
-    exit
-fi
-
-if [ "$#" -eq 1 ] && [ "$1" = "install" ]; then
-    install
-    exit
-fi
-
-if [ "$#" -eq 1 ] && [ "$1" = "uninstall" ]; then
-    uninstall
-    exit
-fi
-
-if [ "$#" -eq 1 ] && [ "$1" = "reset" ]; then
-    reset
-    exit
-fi
-
-if [ "$#" -eq 1 ] && [ "$1" = "import" ]; then
-    import
-    exit
-fi
-
-if [ "$#" -eq 1 ] && [ "$1" = "debug" ]; then
-    debug
-    exit
-fi
-
-if [ "$#" -eq 2 ] && [ "$1" = "ban" ]; then
-    ban "$2"
-    exit
-fi
-
-if [ "$#" -eq 2 ] && [ "$1" = "unban" ]; then
-    unban "$2"
-    exit
-fi
-
-if [ "$#" -eq 2 ] && [ "$1" = "db_ban" ]; then
-    db_ban "$2"
-    exit
-fi
-
-if [ "$#" -eq 2 ] && [ "$1" = "db_unban" ]; then
-    db_unban "$2"
-    exit
-fi
-
-if [ "$#" -eq 2 ] && [ "$1" = "file" ]; then
-    ban_file "$2"
-    exit
-fi
-
-if [ "$#" -eq 3 ] && [ "$1" = "ban" ] && [ "$3" = "--db" ]; then
-    ban "$2" "$3"
-    exit
-fi
-
-if [ "$#" -eq 3 ] && [ "$1" = "unban" ] && [ "$3" = "--db" ]; then
-    unban "$2" "$3"
-    exit
-fi
-
-if [ "$#" -eq 3 ] && [ "$1" = "configure" ] && [ "$2" = "mysql" ] && ([ "$3" = "user" ] || [ "$3" = "password" ] ||[ "$3" = "database" ]); then
-    if [ "$3" = "user" ]; then
-        update_db_user
-        exit
-    fi
-    if [ "$3" = "password" ] || [ "$3" = "pass" ]; then
-        update_db_password
-        exit
-    fi
-    if [ "$3" = "database" ] || [ "$3" = "db" ]; then
-        update_db_database
-        exit
-    fi
-    exit
-fi
-help
+case "${1}" in
+    install) install ;;
+    uninstall) uninstall ;;
+    reset) reset ;;
+    import) import ;;
+    debug) debug ;;
+    ban) ban "$2" ;;
+    unban) unban "$2" ;;
+    file) ban_file "$2" ;;
+    configure) case "${2}" in
+                   user) update_db_user ;;
+                   password) update_db_password ;;
+                   database) update_db_database ;;
+                   esac ;;
+    -h|--help) help ;;
+    *) help ;;
+esac
